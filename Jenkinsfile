@@ -2,12 +2,19 @@ pipeline {
     agent any
 
     stages {
+        // stage('Build') {
+        //     steps {
+        //         echo 'Building...'
+        //         sh 'g++ -o hello_exec hello.cpp'  // Compiling C++ file
+        //     }
+        // }
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'g++ -o hello_exec hello.cpp'  // Compiling C++ file
+                sh 'g++ -o hello_exec hello_wrong.cpp' // Wrong file!
             }
         }
+
         
         stage('Test') {
             steps {
